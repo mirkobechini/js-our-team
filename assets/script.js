@@ -52,23 +52,22 @@ for (let i = 0; i < teamMembers.length; i++) {
   const { name, role, email, img } = member
   teamContainerEL.insertAdjacentHTML('beforeend', `
     <div class="col">
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src=".\/assets\/${img}" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body text-bg-dark">
-                                <h5 class="card-title fw-bold">${name}</h5>
-                                <p class="card-text">${role}</p>
-                                <p class="card-text text-info">${email}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+              <img src=".\/assets\/${img}" class="img-fluid" alt="${name} profile image">
+          </div>
+          <div class="col-md-8 ">
+            <div class="card-body text-bg-dark">
+              <h5 class="card-title fw-bold">${name.toUpperCase()}</h5>
+              <p class="card-text ">${role}</p>
+              <p class="card-text text-info">${email}</p>
             </div>
-            <!-- /.col -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.col -->
     `)
 
 }
