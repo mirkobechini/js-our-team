@@ -43,13 +43,8 @@ const teamMembers = [
 
 const teamContainerEL = document.getElementById("team")
 
-
-//read array
-
-for (let i = 0; i < teamMembers.length; i++) {
-  const member = teamMembers[i];
-
-  const { name, role, email, img } = member
+//functions
+function renderTeam(name, role, img, email) {
   teamContainerEL.insertAdjacentHTML('beforeend', `
     <div class="col">
       <div class="card mb-3" style="max-width: 540px;">
@@ -69,5 +64,14 @@ for (let i = 0; i < teamMembers.length; i++) {
     </div>
     <!-- /.col -->
     `)
+}
+
+
+//read array
+
+for (let i = 0; i < teamMembers.length; i++) {
+  const member = teamMembers[i];
+  const { name, role, email, img } = member
+  renderTeam(name, role, img, email)
 
 }
