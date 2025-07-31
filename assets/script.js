@@ -68,14 +68,38 @@ function renderTeam(name, role, img, email) {
 
 
 //read array
-
-for (let i = 0; i < teamMembers.length; i++) {
-  const member = teamMembers[i];
-  const { name, role, email, img } = member
-  renderTeam(name, role, img, email)
-
+function populatingCard(teamMembers) {
+  for (let i = 0; i < teamMembers.length; i++) {
+    const member = teamMembers[i];
+    const { name, role, email, img } = member
+    renderTeam(name, role, img, email)
+  }
 }
 
-
+populatingCard(teamMembers)
 
 //bonus
+//get DOM elements
+const formEl = document.getElementById('newMember')
+const memberNameEl = document.getElementById('memberName')
+const memberRoleEl = document.getElementById('memberRole')
+const memberEmailEl = document.getElementById('memberEmail')
+const memberImageEl = document.getElementById('memberImage')
+
+formEl.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = memberNameEl.value
+  const role = memberRoleEl.value
+  const email = memberEmailEl.value
+  const img = memberImageEl.value
+  const newMember = {
+    name,
+    role,
+    email,
+    img
+    
+  }
+  teamMembers.push(newMember)
+  renderTeam(name, role, email, img)
+}
+)
