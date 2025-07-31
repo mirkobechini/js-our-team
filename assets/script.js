@@ -53,7 +53,7 @@ function renderTeam(name, role, img, email) {
               <img src=".\/assets\/${img}" class="img-fluid" alt="${name} profile image">
           </div>
           <div class="col-md-8 ">
-            <div class="card-body ">
+            <div class="card-body cardMember">
               <h5 class="card-title fw-bold">${name.toUpperCase()}</h5>
               <p class="card-text ">${role}</p>
               <p class="card-text text-info">${email}</p>
@@ -75,3 +75,7 @@ for (let i = 0; i < teamMembers.length; i++) {
   renderTeam(name, role, img, email)
 
 }
+
+
+
+//bonus
