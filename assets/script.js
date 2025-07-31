@@ -46,14 +46,14 @@ const teamContainerEL = document.getElementById("team")
 //functions
 function renderTeam(name, role, img, email) {
   teamContainerEL.insertAdjacentHTML('beforeend', `
-    <div class="col">
-      <div class="card mb-3" style="max-width: 540px;">
+    <div class="col py-2">
+      <div class="card mb-3 my-2" style="max-width: 385px;">
         <div class="row g-0">
           <div class="col-md-4">
               <img src=".\/assets\/${img}" class="img-fluid" alt="${name} profile image">
           </div>
           <div class="col-md-8 ">
-            <div class="card-body">
+            <div class="card-body ">
               <h5 class="card-title fw-bold">${name.toUpperCase()}</h5>
               <p class="card-text ">${role}</p>
               <p class="card-text text-info">${email}</p>
